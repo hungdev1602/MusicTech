@@ -4,6 +4,7 @@ import "./globals.css";
 import Sider from "./components/sider/Sider";
 import Play from "./components/play/Play";
 import Search from "./components/search/Search";
+import { Suspense } from "react";
 
 const quicksand = Quicksand({ subsets: ["latin"] });
 
@@ -26,10 +27,12 @@ export default function RootLayout({
               <Sider />
             </div>
             <div className="ml-[20px] flex-1">
-              <Search />
-              <main className="mt-[30px] mb-[120px]">
-                {children}
-              </main>
+              <Suspense fallback={<>Loading...</>}>
+                <Search />
+                <main className="mt-[30px] mb-[120px]">
+                  {children}
+                </main>
+              </Suspense>
             </div>
           </div>
         </div>
