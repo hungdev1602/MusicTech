@@ -8,10 +8,10 @@ export default function BannerHome() {
       >
         <div className="flex-1 mr-[34px] ml-[30px]">
           <div className="text-[32px] text-white font-[700] mb-[6px]">
-            Nhạc EDM
+            EDM Music
           </div>
           <div className="text-[14px] text-white font-[500]">
-            Top 100 Nhạc Electronic/Dance Âu Mỹ là danh sách 100 ca khúc hot nhất hiện tại của thể loại Top 100 Nhạc Electronic/Dance Âu Mỹ
+            Top 100 European and American Electronic/Dance Music is a list of the 100 hottest songs currently in the Top 100 European and American Electronic/Dance Music genre.
           </div>
         </div>
         <div className="w-[215px] mr-[22px] mt-[48px]">

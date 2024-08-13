@@ -17,7 +17,7 @@ export default function CardItem(props: {
     <>
       <div className="">
         <Link href={link}>
-          <div className="w-full aspect-full rounded-[15px] truncate mb-[10px]">
+          <div className="w-[180px] aspect-square rounded-[15px] truncate mb-[10px]">
             <img 
               src={image}
               alt={title}

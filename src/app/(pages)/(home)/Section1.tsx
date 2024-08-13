@@ -67,7 +67,7 @@ export default async function Section1() {
           <BannerHome />
         </div>
         <div className="flex-1 ml-[20px]">
-          <Title text="Nghe nhiều" />
+          <Title text="Most Listened Songs" />
           {/* Danh sách bài hát */}
           <SongList data={result} />
         </div>

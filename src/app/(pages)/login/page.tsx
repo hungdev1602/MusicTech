@@ -6,14 +6,14 @@ export default function LoginPage() {
   return (
     <>
       <div className="mt-[60px] w-[500px] mx-auto">
-        <Title text="Đăng Nhập Tài Khoản" className="text-center" />
+        <Title text="Account Login" className="text-center" />
         <form className="">
           <FormInput
             label="Email"
             type="email"
             name="email"
             id="email"
-            placeholder="Ví dụ: levana@gmail.com"
+            placeholder="Example: levana@gmail.com"
             required={true}
           />
           <FormInput
@@ -23,7 +23,7 @@ export default function LoginPage() {
             id="password"
             required={true}
           />
-          <FormButton text="Đăng Nhập" />
+          <FormButton text="Log In" />
         </form>
       </div>
     </>

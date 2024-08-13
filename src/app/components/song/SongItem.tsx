@@ -5,6 +5,7 @@ import ButtonPlay from "../button/ButtonPlay";
 
 export default function SongItem(props: any) {
   const { 
+    id = "",
     image = "", 
     title = "", 
     singer = "", 
@@ -13,7 +14,10 @@ export default function SongItem(props: any) {
   } = props;
   return (
     <>
-      <div className="p-[10px] bg-[#212121] rounded-[15px] flex items-center">
+      <div 
+        className="p-[10px] bg-[#212121] rounded-[15px] flex items-center" 
+        song-id={id}
+      >
         {/* img */}
         <div className="w-[76px] aspect-square rounded-[10px] truncate mr-[10px]">
           <img 
@@ -33,12 +37,12 @@ export default function SongItem(props: any) {
             {singer}
           </div>
           <div className="text-[12px] font-[400] text-white">
-            {listen.toLocaleString('vi-VN')} lượt nghe
+            {listen.toLocaleString('vi-VN')} views
           </div>
         </div>
         {/* Icon */}
         <div className="">
-          <ButtonPlay {...props} />
+          <ButtonPlay {...props} className="w-[34px] h-[34px] rounded-full border border-white inline-flex items-center justify-center text-white mr-[10px]"/>
           <button className="w-[34px] h-[34px] rounded-full border border-white inline-flex items-center justify-center text-white">
             <FaHeart />
           </button>

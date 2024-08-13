@@ -87,7 +87,7 @@ export default async function Section1() {
   return (
     <>
       <div className="mt-[30px]">
-        <Title text="Danh Sách Ca Sĩ" />
+        <Title text="List of Singers" />
         <CardList data={result}/>
       </div>
     </>

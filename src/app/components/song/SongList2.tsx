@@ -9,11 +9,13 @@ export default function SongList2(props: any) {
       {data.map((item: any, index: number) => (
         <SongItem2 
           key={index}
+          id={item.id}
           image={item.image}
           title={item.title}
-          singers={item.singers}
+          singer={item.singers}
           time={item.time}
           link={item.link}
+          audio={item.audio}
         />
       ))}
     </div>

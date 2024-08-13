@@ -86,7 +86,7 @@ export default function Section1 () {
   return (
     <>
       <div className="mt-[30px]">
-        <Title text="Kết Quả Tìm Kiếm" />
+        <Title text="Search Results" />
 
         {/* List */}
         <SongList2 data={data}/>

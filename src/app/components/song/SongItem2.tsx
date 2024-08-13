@@ -1,9 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { FaPlay, FaRegHeart } from "react-icons/fa";
+import ButtonPlay from "../button/ButtonPlay";
 
 export default function SongItem2(props: any) {
   const { 
+    id = "",
     image = "",
     title = "",
     singers = "",
@@ -12,12 +14,13 @@ export default function SongItem2(props: any) {
   } = props;
   return (
     <>
-      <div className="bg-[#212121] rounded-[15px] px-[18px] py-[10px] flex items-center justify-between">
+      <div className="bg-[#212121] rounded-[15px] px-[18px] py-[10px] flex items-center justify-between" song-id={id}>
         {/* Left */}
         <div className="w-[40%] flex items-center">
-          <button className="text-white text-[24px] mr-[12px]">
+          {/* <button className="text-white text-[24px] mr-[12px]">
             <FaPlay />
-          </button>
+          </button> */}
+          <ButtonPlay {...props} className="text-white text-[24px] mr-[12px]"/>
           <div className="w-[42px] aspect-square rounded-[8px] mr-[12px] truncate">
             <Link href={link}>
               <img 

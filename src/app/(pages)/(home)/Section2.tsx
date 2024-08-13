@@ -58,7 +58,7 @@ export default async function Section2() {
   return (
     <>
       <div className="mt-[30px]">
-        <Title text="Danh mục nổi bật" />
+        <Title text="Featured Categories" />
         <CardList data={result}/>
       </div>
     </>

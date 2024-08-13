@@ -33,7 +33,7 @@ export default function Section1 () {
   return (
     <>
       <div className="mt-[30px]">
-        <Title text="Bài hát yêu thích" />
+        <Title text="Favorite song" />
 
         {/* List */}
         <SongList2 data={data}/>

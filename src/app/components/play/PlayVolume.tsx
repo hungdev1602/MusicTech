@@ -1,20 +1,35 @@
+"use client"
+
 import { FaVolumeHigh } from "react-icons/fa6";
 
 export default function PlayVolume() {
+  const handleChange = (event: any) => {
+    const boxVolumeTotal = event.target;
+    
+    const elementPlayAudio: any = document.querySelector(".play-audio");
+    const elementAudio = elementPlayAudio?.querySelector(".inner-audio");
+
+    elementAudio.volume = parseFloat(boxVolumeTotal.value) / 100;
+
+    const boxVolumeCurrent: any = document.querySelector(".box-volume .inner-current");
+    boxVolumeCurrent.style.width = `${boxVolumeTotal.value}%`;
+  }
+
   return (
     <>
-      <div className="w-[184px] flex items-end">
-        <button className="text-[16px] text-white">
+      <div className="w-[184px] flex items-end box-volume">
+        <button className="text-[16px] text-white inner-button">
           <FaVolumeHigh />
         </button>
         <div className="ml-[6px] relative">
-          <div className="h-1 w-[50%] bg-primary rounded-[50px] absolute top-[13px] left-0"></div>
+          <div className="h-1 w-[100%] bg-primary rounded-[50px] absolute top-[13px] left-0 inner-current"></div>
           <input 
             type="range" 
             min={0}
             max={100}
-            defaultValue={50}
-            className="w-full h-[4px] bg-[#FFFFFF0A] appearance-none rounded-[50px] cursor-pointer range-sm"
+            defaultValue={100}
+            className="w-full h-[4px] bg-[#FFFFFF0A] appearance-none rounded-[50px] cursor-pointer range-sm inner-total"
+            onChange={handleChange}
           />
         </div>
       </div>

@@ -6,14 +6,14 @@ export default function RegisterPage() {
   return (
     <>
       <div className="mt-[60px] w-[500px] mx-auto">
-        <Title text="Đăng Ký Tài Khoản" className="text-center" />
+        <Title text="Register Account" className="text-center" />
         <form className="">
           <FormInput
             label="Full Name"
             type="text"
             name="fullName"
             id="fullName"
-            placeholder="Ví dụ: Le Van A"
+            placeholder="Example: Le Van A"
             required={true}
           />
           <FormInput
@@ -21,7 +21,7 @@ export default function RegisterPage() {
             type="email"
             name="email"
             id="email"
-            placeholder="Ví dụ: levana@gmail.com"
+            placeholder="Example: levana@gmail.com"
             required={true}
           />
           <FormInput
@@ -31,7 +31,7 @@ export default function RegisterPage() {
             id="password"
             required={true}
           />
-          <FormButton text="Đăng Nhập" />
+          <FormButton text="Register" />
         </form>
       </div>
     </>

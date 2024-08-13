@@ -73,7 +73,7 @@ export default async function Section2 (props: { singerId: string }) {
   return (
     <>
       <div className="mt-[30px]">
-        <Title text="Danh Sách Bài Hát" />
+        <Title text="Song List" />
 
         {/* List */}
         <SongList2 data={result}/>

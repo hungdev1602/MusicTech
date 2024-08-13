@@ -16,37 +16,37 @@ export default function SiderMenu() {
   const menu: MenuLink[] = [
     {
       icon: <FaHouse />,
-      title: "Trang chủ",
+      title: "Home",
       link: "/"
     },
     {
       icon: <FaMusic />,
-      title: "Danh mục bài hát",
+      title: "Song Categories",
       link: "/categories"
     },
     {
       icon: <FaPodcast />,
-      title: "Ca sĩ",
+      title: "Singers",
       link: "/singers"
     },
     {
       icon: <FaHeart />,
-      title: "Bài hát yêu thích",
+      title: "Wishlist",
       link: "/wishlist"
     },
     {
       icon: <FaRightFromBracket />,
-      title: "Đăng xuất",
+      title: "Log out",
       link: "/logout"
     },
     {
       icon: <FaUser />,
-      title: "Đăng nhập",
+      title: "Log in",
       link: "/login"
     },
     {
       icon: <FaUserPlus />,
-      title: "Đăng ký",
+      title: "Register",
       link: "/register"
     },
   ]

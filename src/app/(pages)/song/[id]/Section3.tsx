@@ -76,7 +76,7 @@ export default async function Section3 (props: { categoryId: string, songId: str
   return (
     <>
       <div className="mt-[30px]">
-        <Title text="Bài Hát Cùng Danh Mục" />
+        <Title text="Songs in the same category" />
 
         {/* List */}
         <SongList2 data={result}/>
