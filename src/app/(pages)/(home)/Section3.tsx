@@ -48,6 +48,7 @@ export default async function Section3() {
           image: value.image,
           title: value.title,
           description: value.description,
+          link: `singers/${key}`
         })
       }
       resolve(data);
