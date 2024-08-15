@@ -1,13 +1,43 @@
+"use client"
+
 import FormButton from "@/app/components/form/FormButton";
 import FormInput from "@/app/components/form/FormInput";
 import Title from "@/app/components/title/Title";
+import { authFirebase, dbFirebase } from "@/app/firebaseConfig";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { ref, set } from "firebase/database";
+import { useRouter } from "next/navigation";
 
 export default function RegisterPage() {
+  const router = useRouter();
+
+  const handleRegister = (event: any) => {
+    event.preventDefault();
+    const fullName = event.target.fullName.value;
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+    createUserWithEmailAndPassword(authFirebase, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        set(ref(dbFirebase, 'users/' + user.uid), {
+          fullName: fullName,
+          email: email,
+          password: password
+        }).then(() => {
+          router.push('/');
+        })
+      })
+      .catch((error) => {
+        alert(`Need stronger password :)`)
+      })
+  }
+
   return (
     <>
       <div className="mt-[60px] w-[500px] mx-auto">
         <Title text="Register Account" className="text-center" />
-        <form className="">
+        <form className="" onSubmit={handleRegister}>
           <FormInput
             label="Full Name"
             type="text"

@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { FaPlay, FaHeart } from "react-icons/fa6";
 import ButtonPlay from "../button/ButtonPlay";
+import ButtonHeart from "../button/ButtonHeart";
 
 export default function SongItem(props: any) {
   const { 
@@ -11,6 +11,7 @@ export default function SongItem(props: any) {
     singer = "", 
     listen = "",
     audio = "",
+    wishlist
   } = props;
   return (
     <>
@@ -43,9 +44,7 @@ export default function SongItem(props: any) {
         {/* Icon */}
         <div className="">
           <ButtonPlay {...props} className="w-[34px] h-[34px] rounded-full border border-white inline-flex items-center justify-center text-white mr-[10px]"/>
-          <button className="w-[34px] h-[34px] rounded-full border border-white inline-flex items-center justify-center text-white">
-            <FaHeart />
-          </button>
+          <ButtonHeart {...props} />
         </div>
       </div>
     </>

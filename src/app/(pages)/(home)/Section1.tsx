@@ -51,22 +51,22 @@ export default async function Section1() {
           title: value.title,
           audio: value.audio,
           listen: value.listen,
-          singer: singersName
+          singer: singersName,
+          wishlist: value.wishlist
         })
       }
       resolve(data);
     })
   });
-
   result = result.slice(0, 3);
 
   return (
     <>
       <div className="flex items-start">
-        <div className="w-[534px]">
+        <div className="xl:w-[534px] lg:w-[100%]">
           <BannerHome />
         </div>
-        <div className="flex-1 ml-[20px]">
+        <div className="xl:flex-1 xl:ml-[20px] lg:w-[100%] lg:flex-none">
           <Title text="Most Listened Songs" />
           {/* Danh sách bài hát */}
           <SongList data={result} />

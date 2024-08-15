@@ -1,16 +1,34 @@
 "use client"
 
+import { authFirebase } from "@/app/firebaseConfig";
+import { onAuthStateChanged } from "firebase/auth";
 import { Url } from "next/dist/shared/lib/router/router";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { FaHouse, FaMusic, FaPodcast, FaHeart, FaRightFromBracket, FaUser, FaUserPlus } from "react-icons/fa6";
+import SiderMenuItem from "./SiderMenuItem";
 
 export default function SiderMenu() {
+  const [isLogin, setIsLogin] = useState<boolean>()
+
+  useEffect(() => {
+    onAuthStateChanged(authFirebase, (user: any) => {
+      if(user){
+        const uid = user.uid;
+        // console.log("Đã đăng nhập", uid);
+        setIsLogin(true);
+      }
+      else{
+        // console.log("Chưa đăng nhập");
+        setIsLogin(false);
+      }
+    })
+  }, [])
+
   interface MenuLink{
     icon: ReactNode,
     title: String,
     link: Url,
+    logged?: Boolean
   }
 
   const menu: MenuLink[] = [
@@ -32,48 +50,40 @@ export default function SiderMenu() {
     {
       icon: <FaHeart />,
       title: "Wishlist",
-      link: "/wishlist"
+      link: "/wishlist",
+      logged: true
     },
     {
       icon: <FaRightFromBracket />,
       title: "Log out",
-      link: "/logout"
+      link: "/logout",
+      logged: true
     },
     {
       icon: <FaUser />,
       title: "Log in",
-      link: "/login"
+      link: "/login",
+      logged: false
     },
     {
       icon: <FaUserPlus />,
       title: "Register",
-      link: "/register"
+      link: "/register",
+      logged: false
     },
   ]
-
-  const pathname = usePathname();
 
   return (
     <>
       <nav className="pt-[30px] px-[20px]">
         <ul className="">
-            {menu.map((item, index) => (
-              <li className="mb-[30px]" key={index}>
-                <Link 
-                  href={item.link} 
-                  className={
-                    `flex items-center hover:text-primary ` + 
-                    (item.link === pathname ? "text-primary" : "text-white")
-                  }>
-                  <span className="text-[20px]">
-                    {item.icon}
-                  </span>
-                  <span className="ml-[20px] text-[16px] font-[700]">
-                    {item.title}
-                  </span>
-                </Link>
-              </li>
-            ))}
+          {menu.map((item, index) => (
+            <SiderMenuItem 
+              key={index} 
+              item={item} 
+              isShow={item.logged === undefined || item.logged === isLogin ? true : false}
+            />
+          ))}
         </ul>
       </nav>
     </>

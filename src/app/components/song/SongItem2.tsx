@@ -2,13 +2,14 @@
 import Link from "next/link";
 import { FaPlay, FaRegHeart } from "react-icons/fa";
 import ButtonPlay from "../button/ButtonPlay";
+import ButtonHeart2 from "../button/ButtonHeart2";
 
 export default function SongItem2(props: any) {
   const { 
     id = "",
     image = "",
     title = "",
-    singers = "",
+    singer = "",
     time = "",
     link = ""
   } = props;
@@ -40,7 +41,7 @@ export default function SongItem2(props: any) {
         {/* Center */}
         <div className="w-[30%] text-center">
           <div className="text-[14px] font-[400] text-white">
-            {singers}
+            {singer}
           </div>
         </div>
 
@@ -49,9 +50,7 @@ export default function SongItem2(props: any) {
           <div className="text-[14px] font-[400] text-white mr-[18px]">
             {time}
           </div>
-          <button className="text-[20px] text-white">
-            <FaRegHeart />
-          </button>
+          <ButtonHeart2 {...props} />
         </div>
       </div>
     </>
