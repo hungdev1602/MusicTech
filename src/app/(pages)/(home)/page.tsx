@@ -14,6 +14,7 @@ export default function Home() {
 
       {/* Section 3 */}
       <Section3 />
+      {/*  */}
     </>
   )
 }
